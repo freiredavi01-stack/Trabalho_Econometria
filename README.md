@@ -85,9 +85,6 @@ Ao rodar o script, as pastas abaixo são criadas automaticamente dentro da pasta
 Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
 
 | Arquivo | Conteúdo |
-|---|---|
-| `resultados/descritivas.csv` | Estatísticas descritivas |
-(... as outras linhas da tabela, como estavam ...)
 
 Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
 |---|---|
