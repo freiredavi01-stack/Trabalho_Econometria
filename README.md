@@ -85,10 +85,12 @@ Ao rodar o script, as pastas abaixo são criadas automaticamente dentro da pasta
 Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
 
 | Arquivo | Conteúdo |
-
-Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
 |---|---|
+| `resultados/funil_amostra.csv` | Funil da amostra (etapa, n e perdidas) |
+| `resultados/uf_por_area.csv` | Tabela UF por área |
 | `resultados/descritivas.csv` | Estatísticas descritivas |
+| `resultados/medias_por_area.csv` | Médias por área |
+| `resultados/premios_ic_agrupado.csv` | Prêmios em % com intervalo de confiança agrupado |
 | `resultados/tabela_modelos.docx` | Tabela dos modelos (1) a (4) |
 | `resultados/teste_capital_igual_RM.csv` | Teste de igualdade entre os coeficientes de Capital e Resto da RM |
 | `resultados/decomposicao_m3_m4.csv` | Decomposição da diferença entre os modelos (3) e (4) |
@@ -96,7 +98,6 @@ Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode 
 | `resultados/probit_selecao.csv` | Probit de seleção amostral |
 | `graficos/diag_*.png` | Gráficos de diagnóstico dos resíduos |
 | `sessionInfo.txt` | Ambiente de execução |
-| [outros arquivos] | [completar] |
 
 ## Ambiente
 
