@@ -1,6 +1,6 @@
 # Trabalho_Econometria
 “Prêmio salarial da capital, PNAD Contínua 2025 T2 (Econometria I)”
-# Prêmio salarial da capital: PNAD Contínua 2025 (2º trimestre)
+
 
 Trabalho empírico da disciplina Econometria I (FGV EESP).
 
