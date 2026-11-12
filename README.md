@@ -79,7 +79,7 @@ Ao rodar o script, as pastas abaixo são criadas automaticamente dentro da pasta
 
 - `dados/`: a base baixada (`pnadc_2025_t2.rds`). Não é incluída no repositório, por ser grande demais (199 MB).
 - `resultados/`: os arquivos `.csv` e a `tabela_modelos.docx`.
-- `graficos/`: as figuras `diag_*.png`, de diagnóstico dos resíduos.
+- `graficos/`: as figuras descritivas (`hist_lw.png`, `boxplot_lw_area.png`), o gráfico do prêmio (`premio_capital.png`) e as figuras `diag_*.png`, de diagnóstico dos resíduos.
 - `sessionInfo.txt`: fica direto na pasta de trabalho, fora das subpastas.
 
 Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
