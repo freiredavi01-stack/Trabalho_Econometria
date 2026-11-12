@@ -75,13 +75,19 @@ Reprodutibilidade: grava o sessionInfo.txt.
 
 ## Arquivos de saída
 
-| Arquivo | Conteúdo |
-Ao rodar o script, as pastas abaixo são criadas automaticamente dentro da pasta de trabalho do R, que é a pasta onde o script está salvo (confira com getwd()):
+Ao rodar o script, as pastas abaixo são criadas automaticamente dentro da pasta de trabalho do R, que é a pasta onde o script está salvo (confira com `getwd()`):
 
-dados/: a base baixada (pnadc_2025_t2.rds). Não é incluída no repositório, por ser grande demais (199 MB).
-resultados/: os arquivos .csv e a tabela_modelos.docx.
-graficos/: as figuras diag_*.png, de diagnóstico dos resíduos.
-sessionInfo.txt: fica direto na pasta de trabalho, fora das subpastas.
+- `dados/`: a base baixada (`pnadc_2025_t2.rds`). Não é incluída no repositório, por ser grande demais (199 MB).
+- `resultados/`: os arquivos `.csv` e a `tabela_modelos.docx`.
+- `graficos/`: as figuras `diag_*.png`, de diagnóstico dos resíduos.
+- `sessionInfo.txt`: fica direto na pasta de trabalho, fora das subpastas.
+
+Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
+
+| Arquivo | Conteúdo |
+|---|---|
+| `resultados/descritivas.csv` | Estatísticas descritivas |
+(... as outras linhas da tabela, como estavam ...)
 
 Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
 |---|---|
