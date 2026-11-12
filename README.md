@@ -58,12 +58,32 @@ Método: MQO (equação de Mincer) com dados em cross-section. Linguagem: R.
 Não há componente aleatório, então não é necessário fixar semente.
 
 ## O que o script faz
+Download e importação: baixa a PNADC 2025T2 com get_pnadc e guarda um .rds em dados/, para não baixar de novo.
+Conversão de classes: mostra a classe de cada coluna, converte as usadas para número e confere se algum NA novo apareceu.
+Amostra: aplica os filtros em sequência (ocupados, 18 a 65 anos, empregados, renda e horas positivas) e salva o funil com n e perdidas.
+Construção de variáveis: cria salário-hora, log, área, experiência, dummies (mulher, preta/parda, formal, público), setor, UF e o conglomerado estrato-UPA.
+Descritivas: tabela UF por área, percentis, fração abaixo do mínimo, médias por área, correlações e média e variância das variáveis.
+Modelos: estima m1 a m4, de só a área até todos os controles, e calcula o prêmio em % com IC.
+Erros-padrão: usa EP agrupado por estrato-UPA em tudo (HC1 só aparece como comparação), testa Capital = Resto da RM e monta a tabela .docx.
+Decomposição: mostra quanto cada bloco (formal, público, setor) move o coeficiente da capital entre m3 e m4, pela identidade variável omitida.
+Robustez: refaz o m4 com peso, sem setor público, cortando 1% de cada ponta e sem o DF, e testa a forma da educação (quadrática e fatores).
+Sensibilidade: reúne o coeficiente da capital de todas essas variações em três blocos (especificação ou medida, população, codificação).
+Diagnósticos: 5 gráficos dos resíduos do m4 mais o teste de Breusch-Pagan.
+Seleção: probit de quem entra na amostra entre todos de 18 a 65 anos, com EP agrupado.
+Reprodutibilidade: grava o sessionInfo.txt.
 
-[Descrever, em uma linha por etapa, as seções do script: download e importação, conversão de classes, amostra, construção de variáveis, descritivas, modelos, erros-padrão, decomposição, robustez, diagnósticos e seleção.]
 
 ## Arquivos de saída
 
 | Arquivo | Conteúdo |
+Ao rodar o script, as pastas abaixo são criadas automaticamente dentro da pasta de trabalho do R, que é a pasta onde o script está salvo (confira com getwd()):
+
+dados/: a base baixada (pnadc_2025_t2.rds). Não é incluída no repositório, por ser grande demais (199 MB).
+resultados/: os arquivos .csv e a tabela_modelos.docx.
+graficos/: as figuras diag_*.png, de diagnóstico dos resíduos.
+sessionInfo.txt: fica direto na pasta de trabalho, fora das subpastas.
+
+Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
 |---|---|
 | `resultados/descritivas.csv` | Estatísticas descritivas |
 | `resultados/tabela_modelos.docx` | Tabela dos modelos (1) a (4) |
