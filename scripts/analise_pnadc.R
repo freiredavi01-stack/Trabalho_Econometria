@@ -100,7 +100,7 @@ write.csv(desc, "resultados/descritivas.csv", row.names = FALSE)
 
 if (!dir.exists("graficos")) dir.create("graficos")
 png("graficos/hist_lw.png", width = 800, height = 600)
-hist(base$lw, breaks = 50, main = "", xlab = "log do salario-hora")
+hist(base$lw, breaks = 50, main = "", xlab = "log do salário-hora", ylab = "Frequência")                                      
 dev.off()
 png("graficos/boxplot_lw_area.png", width = 800, height = 600)
 boxplot(lw ~ area, data = base, xlab = "", ylab = "log do salario-hora", outline = FALSE)
