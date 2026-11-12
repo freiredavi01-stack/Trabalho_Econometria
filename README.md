@@ -102,6 +102,9 @@ Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode 
 | `resultados/uf_por_area.csv` | Observações por UF e tipo de área |
 | `resultados/medias_por_area.csv` | Médias de variáveis selecionadas por tipo de área |
 | `resultados/premios_ic_agrupado.csv` | Prêmios em % com IC, erros-padrão agrupados |
+| `graficos/hist_lw.png` | Histograma do log do salário-hora |
+| `graficos/boxplot_lw_area.png` | Boxplot do log do salário-hora por tipo de área |
+| `graficos/premio_capital.png` | Prêmio da capital nos modelos (1) a (4), com IC agrupado |
 
 ## Ambiente
 
