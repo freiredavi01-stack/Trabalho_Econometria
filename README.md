@@ -18,7 +18,7 @@ Método: MQO (equação de Mincer) com dados em cross-section. Linguagem: R.
 
 ### Variáveis utilizadas
 
-| Código | Descrição (preencher a partir do dicionário do IBGE) |
+| Código | Descrição |
 |---|---|
 | UF | unidade da federação. |
 | V1023 | tipo de área: 1 capital, 2 resto da RM, 3 resto da RIDE, 4 resto da UF (interior). |
@@ -44,7 +44,7 @@ Método: MQO (equação de Mincer) com dados em cross-section. Linguagem: R.
 │   └── analise_pnadc.R         # script completo e comentado
 ├── dados/                      # criada pelo script; não versionada
 ├── resultados/                 # tabelas e arquivos .csv/.docx gerados
-├── graficos/                   # figuras de diagnóstico (.png)
+├── graficos/                   # figuras (.png): descritivas, prêmio e diagnóstico
 └── sessionInfo.txt             # versões de R e pacotes usados
 ```
 
@@ -67,7 +67,7 @@ Não há componente aleatório, então não é necessário fixar semente.
 6. **Modelos:** estima os modelos (1) a (4), de só a área até todos os controles, e calcula o prêmio em % com intervalo de confiança.
 7. **Erros-padrão:** usa EP agrupado por estrato-UPA em tudo (o HC1 aparece só como comparação), testa Capital = Resto da RM e monta a tabela `.docx`.
 8. **Decomposição:** mostra quanto cada bloco (formal, público, setor) move o coeficiente da capital entre os modelos (3) e (4).
-9. **Robustez:** refaz o modelo (4) com peso, sem setor público, cortando 1% de cada ponta e sem o DF, e testa a forma da educação (quadrática e fatores).
+9. **Robustez:** refaz o modelo (4) com peso, sem setor público e cortando 1% de cada ponta, testa a forma da educação (quadrática e fatores) e faz uma checagem de identificação sem o DF.
 10. **Sensibilidade:** reúne o coeficiente da capital de todas essas variações em três blocos (especificação ou medida, população, codificação).
 11. **Diagnósticos:** 5 gráficos dos resíduos do modelo (4) e o teste de Breusch-Pagan.
 12. **Seleção:** probit de quem entra na amostra entre todos de 18 a 65 anos, com EP agrupado.
@@ -75,14 +75,12 @@ Não há componente aleatório, então não é necessário fixar semente.
 
 ## Arquivos de saída
 
-Ao rodar o script, as pastas abaixo são criadas automaticamente dentro da pasta de trabalho do R, que é a pasta onde o script está salvo (confira com `getwd()`):
+Ao rodar o script, as pastas abaixo são criadas automaticamente dentro da pasta de trabalho do R, que deve ser a raiz do repositório (confira com `getwd()`):
 
-- `dados/`: a base baixada (`pnadc_2025_t2.rds`). Não é incluída no repositório, por ser grande demais (199 MB).
+- `dados/`: a base baixada do IBGE (arquivos brutos e dicionário) e a cópia `pnadc_2025_t2.rds`. Não é incluída no repositório, por ser grande demais (o zip baixado tem mais de 200 MB).
 - `resultados/`: os arquivos `.csv` e a `tabela_modelos.docx`.
 - `graficos/`: as figuras descritivas (`hist_lw.png`, `boxplot_lw_area.png`), o gráfico do prêmio (`premio_capital.png`) e as figuras `diag_*.png`, de diagnóstico dos resíduos.
 - `sessionInfo.txt`: fica direto na pasta de trabalho, fora das subpastas.
-
-Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode o script inteiro.
 
 | Arquivo | Conteúdo |
 |---|---|
@@ -98,10 +96,6 @@ Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode 
 | `resultados/probit_selecao.csv` | Probit de seleção amostral |
 | `graficos/diag_*.png` | Gráficos de diagnóstico dos resíduos |
 | `sessionInfo.txt` | Ambiente de execução |
-| `resultados/funil_amostra.csv` | Observações após cada filtro da amostra |
-| `resultados/uf_por_area.csv` | Observações por UF e tipo de área |
-| `resultados/medias_por_area.csv` | Médias de variáveis selecionadas por tipo de área |
-| `resultados/premios_ic_agrupado.csv` | Prêmios em % com IC, erros-padrão agrupados |
 | `graficos/hist_lw.png` | Histograma do log do salário-hora |
 | `graficos/boxplot_lw_area.png` | Boxplot do log do salário-hora por tipo de área |
 | `graficos/premio_capital.png` | Prêmio da capital nos modelos (1) a (4), com IC agrupado |
@@ -114,6 +108,7 @@ Rodado em R 4.5.2 (Windows 11). As versões dos pacotes estão em `sessionInfo.t
 Usei o Claude como apoio, seguindo as orientações da disciplina, em uma única conversa. A IA atuou como tutora, mentora ou ferramenta, nunca como autora: a pergunta, as escolhas econométricas, a interpretação dos resultados e o texto são meus.
 
 Como tutora e mentora, ajudou a testar a clareza e a viabilidade da pergunta, a montar a estratégia de busca de artigos (sem listar referências), a explicar funções e erros do R com exemplos genéricos e a depurar o código. Como mentora, comentou o que produzi primeiro: a narrativa da revisão, a escolha de controles, forma funcional e método, os critérios de amostra, os testes de diagnóstico, as limitações e a argumentação do relatório. Como ferramenta, identificou bases candidatas, escreveu o código de download e importação, sugeriu a estrutura de seções, revisou a gramática sem alterar o conteúdo e ajudou na formatação ABNT e no repositório.
+
 ## Autor
 
 Rodrigo Thibes e Davi Freire. FGV EESP, Economia.
