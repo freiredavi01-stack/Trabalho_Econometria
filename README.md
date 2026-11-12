@@ -41,7 +41,7 @@ Método: MQO (equação de Mincer) com dados em cross-section. Linguagem: R.
 ├── README.md
 ├── .gitignore
 ├── scripts/
-│   └── [nome_do_script].R      # script completo e comentado
+│   └── analise_pnadc.R         # script completo e comentado
 ├── dados/                      # criada pelo script; não versionada
 ├── resultados/                 # tabelas e arquivos .csv/.docx gerados
 ├── graficos/                   # figuras de diagnóstico (.png)
@@ -52,7 +52,7 @@ Método: MQO (equação de Mincer) com dados em cross-section. Linguagem: R.
 
 1. Instale o R e os pacotes: `PNADcIBGE`, `dplyr`, `lmtest`, `sandwich`, `modelsummary`.
 2. Defina o diretório de trabalho na raiz do repositório.
-3. Rode o script do início ao fim, por exemplo `Rscript scripts/[nome_do_script].R`.
+3. Rode o script do início ao fim, por exemplo `Rscript scripts/analise_pnadc.R`.
 4. Na primeira execução o script baixa os microdados (precisa de internet) e salva uma cópia em `dados/pnadc_2025_t2.rds`. Nas execuções seguintes lê essa cópia.
 
 Não há componente aleatório, então não é necessário fixar semente.
@@ -72,6 +72,19 @@ Diagnósticos: 5 gráficos dos resíduos do m4 mais o teste de Breusch-Pagan.
 Seleção: probit de quem entra na amostra entre todos de 18 a 65 anos, com EP agrupado.
 Reprodutibilidade: grava o sessionInfo.txt.
 
+1. Download e importação da PNADC, com cópia local em `.rds`.
+2. Conversão de classes e checagem de valores ausentes.
+3. Amostra, com a contagem de observações após cada filtro.
+4. Construção das variáveis.
+5. Estatísticas descritivas.
+6. Modelos (1) a (4) por MQO, com erros-padrão agrupados por estrato-UPA.
+7. Prêmios em % com intervalos de confiança e teste de igualdade entre Capital e Resto da RM.
+8. Tabela dos modelos.
+9. Decomposição da diferença entre os modelos (3) e (4).
+10. Robustez e sensibilidade, em três blocos: especificação e medida (A), população (B) e checagens de identificação (C).
+11. Diagnósticos dos resíduos.
+12. Seleção amostral (probit).
+13. Registro do ambiente (`sessionInfo`).
 
 ## Arquivos de saída
 
@@ -98,6 +111,10 @@ Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode 
 | `resultados/probit_selecao.csv` | Probit de seleção amostral |
 | `graficos/diag_*.png` | Gráficos de diagnóstico dos resíduos |
 | `sessionInfo.txt` | Ambiente de execução |
+| `resultados/funil_amostra.csv` | Observações após cada filtro da amostra |
+| `resultados/uf_por_area.csv` | Observações por UF e tipo de área |
+| `resultados/medias_por_area.csv` | Médias de variáveis selecionadas por tipo de área |
+| `resultados/premios_ic_agrupado.csv` | Prêmios em % com IC, erros-padrão agrupados |
 
 ## Ambiente
 
