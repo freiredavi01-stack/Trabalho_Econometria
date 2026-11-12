@@ -20,19 +20,19 @@ Método: MQO (equação de Mincer) com dados em cross-section. Linguagem: R.
 
 | Código | Descrição (preencher a partir do dicionário do IBGE) |
 |---|---|
-| UF | |
-| V1023 | |
-| V2007 | |
-| V2009 | |
-| V2010 | |
-| VD3005 | |
-| VD4002 | |
-| VD4009 | |
-| VD4010 | |
-| VD4016 | |
-| V4039 | |
-| V1028 | |
-| Estrato, UPA | |
+| UF | unidade da federação. |
+| V1023 | tipo de área: 1 capital, 2 resto da RM, 3 resto da RIDE, 4 resto da UF (interior). |
+| V2007 | sexo: 1 homem, 2 mulher.|
+| V2009 |idade em anos.|
+| V2010 |cor ou raça: 1 branca, 2 preta, 3 amarela, 4 parda, 5 indígena.|
+| VD3005 |anos de estudo.|
+| VD4002 |condição de ocupação: 1 ocupada, 2 desocupada.|
+| VD4009 |posição na ocupação e categoria do emprego (privado, doméstico, público, militar, empregador, conta própria, etc.).|
+| VD4010 |grupamento de atividade (setor).|
+| VD4016 |rendimento mensal habitual do trabalho principal, em reais.|
+| V4039 |horas trabalhadas por semana no trabalho principal.|
+| V1028 |peso amostral (o fator de expansão da pessoa).|
+| Estrato, UPA |o estrato e a unidade primária de amostragem (área sorteada). Servem para agrupar os erros-padrão por conglomerado.|
 
 ## Estrutura do repositório
 
