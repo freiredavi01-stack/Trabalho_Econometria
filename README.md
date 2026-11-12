@@ -108,7 +108,7 @@ Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode 
 Rodado em R 4.5.2 (Windows 11). As versões dos pacotes estão em `sessionInfo.txt`.
 
 ## Autoria e uso de IA
-Usei o Claude como apoio, seguindo as orientações da disciplina, em uma única conversa (link público: https://claude.ai/share/fc64df71-2c31-47ee-a9cd 3a11ad93cc99). A IA atuou como tutora, mentora ou ferramenta, nunca como autora: a pergunta, as escolhas econométricas, a interpretação dos resultados e o texto são meus.
+Usei o Claude como apoio, seguindo as orientações da disciplina, em uma única conversa. A IA atuou como tutora, mentora ou ferramenta, nunca como autora: a pergunta, as escolhas econométricas, a interpretação dos resultados e o texto são meus.
 
 Como tutora e mentora, ajudou a testar a clareza e a viabilidade da pergunta, a montar a estratégia de busca de artigos (sem listar referências), a explicar funções e erros do R com exemplos genéricos e a depurar o código. Como mentora, comentou o que produzi primeiro: a narrativa da revisão, a escolha de controles, forma funcional e método, os critérios de amostra, os testes de diagnóstico, as limitações e a argumentação do relatório. Como ferramenta, identificou bases candidatas, escreveu o código de download e importação, sugeriu a estrutura de seções, revisou a gramática sem alterar o conteúdo e ajudou na formatação ABNT e no repositório.
 ## Autor
