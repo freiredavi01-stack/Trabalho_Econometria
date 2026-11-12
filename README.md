@@ -109,4 +109,4 @@ Rodado em R 4.5.1 (Windows 11). As versões dos pacotes estão em `sessionInfo.t
 
 ## Autor
 
-Davi Freire. FGV EESP, Economia.
+Rodrigo Thibes e Davi Freire. FGV EESP, Economia.
