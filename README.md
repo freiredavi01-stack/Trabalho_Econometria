@@ -105,7 +105,7 @@ Para reproduzir, abra o script, defina a pasta de trabalho, reinicie o R e rode 
 
 ## Ambiente
 
-Rodado em R 4.5.1 (Windows 11). As versões dos pacotes estão em `sessionInfo.txt`.
+Rodado em R 4.5.2 (Windows 11). As versões dos pacotes estão em `sessionInfo.txt`.
 
 ## Autoria e uso de IA
 
