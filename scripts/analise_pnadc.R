@@ -98,6 +98,14 @@ desc <- data.frame(variavel = vars,
 desc
 write.csv(desc, "resultados/descritivas.csv", row.names = FALSE)
 
+if (!dir.exists("graficos")) dir.create("graficos")
+png("graficos/hist_lw.png", width = 800, height = 600)
+hist(base$lw, breaks = 50, main = "", xlab = "log do salario-hora")
+dev.off()
+png("graficos/boxplot_lw_area.png", width = 800, height = 600)
+boxplot(lw ~ area, data = base, xlab = "", ylab = "log do salario-hora", outline = FALSE)
+dev.off()
+
 #regressoes, premio e teste capital
 
 m1 <- lm(lw ~ area, data = base)
@@ -128,6 +136,14 @@ premios <- do.call(rbind, lapply(c("m1", "m2", "m3", "m4"), function(nm) {
 }))
 premios
 write.csv(premios, "resultados/premios_ic_agrupado.csv", row.names = FALSE)
+
+cap <- subset(premios, area == "areaCapital")
+png("graficos/premio_capital.png", width = 800, height = 600)
+plot(1:4, cap$premio, ylim = range(cap$ic_inf, cap$ic_sup), pch = 19, xaxt = "n",
+     xlab = "modelo", ylab = "premio da capital (%)")
+axis(1, at = 1:4, labels = c("(1)", "(2)", "(3)", "(4)"))
+arrows(1:4, cap$ic_inf, 1:4, cap$ic_sup, angle = 90, code = 3, length = 0.05)
+dev.off()
 100 * (exp(coefci(m4, vcov. = vcovHC(m4, type = "HC1"))[nomes, ]) - 1)  
 sapply(list(m1, m2, m3, m4), function(m) 100 * (exp(coef(m)["areaCapital"]) - 1))
 #teste da hipotese
@@ -295,4 +311,6 @@ tapply(pop$VD3005, pop$entra, mean)
 #reprodutibilidade 
 sessionInfo()
 writeLines(capture.output(sessionInfo()), "sessionInfo.txt")
+
+
 
