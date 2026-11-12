@@ -14,7 +14,7 @@ Método: MQO (equação de Mincer) com dados em cross-section. Linguagem: R.
 
 - Base: PNAD Contínua, IBGE, microdados de 2025, 2º trimestre.
 - Fonte: baixada pelo script via pacote `PNADcIBGE` (função `get_pnadc`). Os dados brutos **não** são versionados.
-- Documentação e dicionário de variáveis: [inserir link do IBGE].
+- Documentação e dicionário de variáveis: https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/2025/
 
 ### Variáveis utilizadas
 
