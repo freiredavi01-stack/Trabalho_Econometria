@@ -58,33 +58,20 @@ Método: MQO (equação de Mincer) com dados em cross-section. Linguagem: R.
 Não há componente aleatório, então não é necessário fixar semente.
 
 ## O que o script faz
-Download e importação: baixa a PNADC 2025T2 com get_pnadc e guarda um .rds em dados/, para não baixar de novo.
-Conversão de classes: mostra a classe de cada coluna, converte as usadas para número e confere se algum NA novo apareceu.
-Amostra: aplica os filtros em sequência (ocupados, 18 a 65 anos, empregados, renda e horas positivas) e salva o funil com n e perdidas.
-Construção de variáveis: cria salário-hora, log, área, experiência, dummies (mulher, preta/parda, formal, público), setor, UF e o conglomerado estrato-UPA.
-Descritivas: tabela UF por área, percentis, fração abaixo do mínimo, médias por área, correlações e média e variância das variáveis.
-Modelos: estima m1 a m4, de só a área até todos os controles, e calcula o prêmio em % com IC.
-Erros-padrão: usa EP agrupado por estrato-UPA em tudo (HC1 só aparece como comparação), testa Capital = Resto da RM e monta a tabela .docx.
-Decomposição: mostra quanto cada bloco (formal, público, setor) move o coeficiente da capital entre m3 e m4, pela identidade variável omitida.
-Robustez: refaz o m4 com peso, sem setor público, cortando 1% de cada ponta e sem o DF, e testa a forma da educação (quadrática e fatores).
-Sensibilidade: reúne o coeficiente da capital de todas essas variações em três blocos (especificação ou medida, população, codificação).
-Diagnósticos: 5 gráficos dos resíduos do m4 mais o teste de Breusch-Pagan.
-Seleção: probit de quem entra na amostra entre todos de 18 a 65 anos, com EP agrupado.
-Reprodutibilidade: grava o sessionInfo.txt.
 
-1. Download e importação da PNADC, com cópia local em `.rds`.
-2. Conversão de classes e checagem de valores ausentes.
-3. Amostra, com a contagem de observações após cada filtro.
-4. Construção das variáveis.
-5. Estatísticas descritivas.
-6. Modelos (1) a (4) por MQO, com erros-padrão agrupados por estrato-UPA.
-7. Prêmios em % com intervalos de confiança e teste de igualdade entre Capital e Resto da RM.
-8. Tabela dos modelos.
-9. Decomposição da diferença entre os modelos (3) e (4).
-10. Robustez e sensibilidade, em três blocos: especificação e medida (A), população (B) e checagens de identificação (C).
-11. Diagnósticos dos resíduos.
-12. Seleção amostral (probit).
-13. Registro do ambiente (`sessionInfo`).
+1. **Download e importação:** baixa a PNADC 2025T2 com `get_pnadc` e guarda um `.rds` em `dados/`, para não baixar de novo.
+2. **Conversão de classes:** mostra a classe de cada coluna, converte as usadas para número e confere se algum NA novo apareceu.
+3. **Amostra:** aplica os filtros em sequência (ocupados, 18 a 65 anos, empregados, renda e horas positivas) e salva o funil com n e perdidas.
+4. **Construção de variáveis:** cria salário-hora, log, área, experiência, dummies (mulher, preta/parda, formal, público), setor, UF e o conglomerado estrato-UPA.
+5. **Descritivas:** tabela UF por área, percentis, fração abaixo do mínimo, médias por área, correlações, média e variância das variáveis.
+6. **Modelos:** estima os modelos (1) a (4), de só a área até todos os controles, e calcula o prêmio em % com intervalo de confiança.
+7. **Erros-padrão:** usa EP agrupado por estrato-UPA em tudo (o HC1 aparece só como comparação), testa Capital = Resto da RM e monta a tabela `.docx`.
+8. **Decomposição:** mostra quanto cada bloco (formal, público, setor) move o coeficiente da capital entre os modelos (3) e (4).
+9. **Robustez:** refaz o modelo (4) com peso, sem setor público, cortando 1% de cada ponta e sem o DF, e testa a forma da educação (quadrática e fatores).
+10. **Sensibilidade:** reúne o coeficiente da capital de todas essas variações em três blocos (especificação ou medida, população, codificação).
+11. **Diagnósticos:** 5 gráficos dos resíduos do modelo (4) e o teste de Breusch-Pagan.
+12. **Seleção:** probit de quem entra na amostra entre todos de 18 a 65 anos, com EP agrupado.
+13. **Reprodutibilidade:** grava o `sessionInfo.txt`.
 
 ## Arquivos de saída
 
